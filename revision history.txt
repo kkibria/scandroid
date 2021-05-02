@@ -1,0 +1,67 @@
+the Scandroid
+copyright 2005 Charles Hartman
+
+REVISION HISTORY
+
+Yet to Be Done:
+-- invent a way to validate user's entries in the dictionary-edit dialog
+-- find way to deal with phrasal verbs
+-- allow proportional fonts and user-choosable fonts
+-- make line numbers smart (exclude blanks, titles)
+-- handle digits in verse ("12" -> "twelve")
+
+1.1 -
+-- major change in architecture: when a file is loaded, to deduce the metrical
+	parameters the program now tries out all stress resolutions on the sample
+	lines (as well as both iambic and anapestic scansions, and both iambic
+	algorithms). This and other tuning has made the detection of metron and
+	line-length more reliable
+-- added a supplementary algorithm for determining the length of anapestic 
+	lines (counting non-adjacent stresses)
+-- added a Reload Dictionary button in case user wants to discard changes
+	made for one poem-file when loading another
+-- expanded and improved recognition of promoted stresses in anapestics
+-- if user forces metron, line-length is now refigured
+-- added crude large-scale error-trapping to report location of crash-sites
+-- fixed crash while deducing parameters of poem with short lines
+-- extended Copy capability to text and scan work-boxes
+-- added -tious, -cious to suffixes
+-- multiple small changes (but they add up!) in syllabification/stress-guessing
+	code, coordinated with changes in dictionary; somewhat better, but
+	*different* performance with any arbitrary vocabulary
+-- massive, though incomplete, revision and rationalization of code
+
+
+1.0a - 
+-- added routines to scan anapestic verse, both step-by-step and in quick
+	run-through; many iterations of this code
+-- added top-level code to determine metron (iamb or anapest) and line-length
+	(if clear) by sampling lines in any Loaded file; many iterations of this code
+-- added status bar to reflect metron, line-length
+-- improved dictionary-edit dialog: layout, "words" including one hyphen, etc.
+-- fixed Win/Mac word-selection difference in dictionary-edit dialog
+-- added optional display of line numbers for text (though not "smart" ones)
+-- added handling of clitics such as "th'"
+-- added Select-All and Copy-to-clipboard for Notes and Text panels
+-- added Find for Text panel
+-- refined treatment of promoted stresses in iambics
+-- updated and enlarged .pdf manual
+
+
+0.3 - (never released as such)
+-- cleaned up code, added docstrings to most functions
+-- improved code for selecting next unscanned line
+-- added provision in dictionary for stress-ambiguous monosyllables and
+	polysyllables)
+-- added stress-ambiguity resolution, so that function choosing between
+	iambic algorithms examines multiple possible lexical-stress candidates
+-- added measure-complexity function to aid in choice among stress-resolution
+	possibilities and between algorithms
+
+
+0.2a - first release under GPL
+-- two-algorithm scansion of iambic pentameters (only)
+-- step-by-step scansion with displayed explanations
+-- dictionary-edit dialog to correct syllabification and stress
+-- load and save poem-text files
+-- manual in .pdf format
