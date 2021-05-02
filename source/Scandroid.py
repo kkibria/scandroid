@@ -16,7 +16,7 @@
 
 
 import wx
-import string, os, sys, sre
+import string, os, sys, re
 import random
 from math import modf
 from scanstrings import *				# some global texts & the Explainer
@@ -57,8 +57,8 @@ class ScandroidFrame(wx.Frame):
         self.WholeText.DisplayText(InitialText)		# as a startup . . .
         self.WholeText.SetReadOnly(0)	# but allow editing
         self.EnableScanButtons(False)
-        wx.FutureCall(100, self.WholeText.SetFocus)	# Robin Dunn's fix!
-        self.leadSpaceRE = sre.compile(r'[ |\t]+')
+        wx.CallLater(100, self.WholeText.SetFocus)	# Robin Dunn's fix!
+        self.leadSpaceRE = re.compile(r'[ |\t]+')
     
     def _setSizes(self):
         screensize = wx.GetDisplaySize()
@@ -341,7 +341,7 @@ class ScandroidFrame(wx.Frame):
         """
         self.ScanLine.Clear()		# get rid of e.g. intermediate results
         if showAlg and self.Metron == 2: 	# meaningless while anapestics
-            marks += '[alg ' + `self.whichAlgorithm` + ']'
+            marks += f'[alg {self.whichAlgorithm}]'
         self.ScanLine.AppendText(marks)
 
     def ShowTextLine(self, txt, num): 
@@ -662,7 +662,7 @@ class ScandroidFrame(wx.Frame):
 profiling = False
 if profiling: import profile
 
-app = wx.PySimpleApp()
+app = wx.App()
 appframe = ScandroidFrame(None, -1, "the Scandroid")
 appframe.Center()
 appframe.Show()

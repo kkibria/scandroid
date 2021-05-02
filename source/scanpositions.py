@@ -22,7 +22,7 @@
 # to promotions (especially in iambics) end up using them, good. If not,
 # sooner or later these lines should be deleted.
 
-import sre
+import re
 import copy
 from scanstrings import *
 from scanutilities import *
@@ -184,9 +184,9 @@ class Positioner:
     def GetScanString(self, feet = True, punct = False, sylsOnly = False):
         """Return fully spaced line of all scansion marks (with options)"""
         s = ''.join(self.charlist)
-        if not feet or sylsOnly: s = sre.sub('\|', ' ', s)
-        if not punct or sylsOnly: s = sre.sub('[-.,;:?!\(\)\"\']', ' ', s)
-        if sylsOnly: s = sre.sub('[^ ]', SYLMARK, s)
+        if not feet or sylsOnly: s = re.sub('\|', ' ', s)
+        if not punct or sylsOnly: s = re.sub('[-.,;:?!\(\)\"\']', ' ', s)
+        if sylsOnly: s = re.sub('[^ ]', SYLMARK, s)
         return s
     
     def AdjustMarks(self, scansion):

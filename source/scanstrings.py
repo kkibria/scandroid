@@ -57,8 +57,8 @@ AnapSubs = { 'xx/':'anapest', '/x/':'cretic', 'x//':'bacchius', 'x/':'iamb',
 lineLengthName = ['','','DIMETER','TRIMETER','TETRAMETER','PENTAMETER',
                             'HEXAMETER','HEPTAMETER','OCTAMETER','NONAMETER']
 
-import wx			# only for default encoding!
-defaultEncoding = wx.GetDefaultPyEncoding()
+# import wx			# only for default encoding!
+# defaultEncoding = wx.GetDefaultPyEncoding()
 
 class Explainer:
     """Send pedagogically useful (?) notes to the Notes frame about each step.

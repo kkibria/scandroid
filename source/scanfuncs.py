@@ -14,7 +14,7 @@
 # a Positioner for some of the grunt work.
 
 
-import sre
+import re
 import random		# second import! will be reseeded! (not a problem)
 from scanstrings import *
 from syllables import *
@@ -37,9 +37,9 @@ class ScansionMachine:
         self.S = Syllabizer()
         self.P = Positioner()
         self.SD = ScanDict(self)
-        self.vowelRE = sre.compile('[aeiouyAEIOUY]')
-        self.wordBoundsRE = sre.compile(r"([-.,;:?!\(\)\"\s]+)")
-        self.possIambRE = sre.compile('(x[x/])+')
+        self.vowelRE = re.compile('[aeiouyAEIOUY]')
+        self.wordBoundsRE = re.compile(r"([-.,;:?!\(\)\"\s]+)")
+        self.possIambRE = re.compile('(x[x/])+')
         
     def SetLineFeet(self, num, setflag):
         """Frame, while deducing parameters, sets chief values here."""
@@ -63,11 +63,11 @@ class ScansionMachine:
         # Tricky: hyphens separate tokens, apostrophes don't; hyphen must go
         # first in list; double-quote needs escape; and please
         # note subtle placement of '+', which allows punct+space to be a  string
-        words = self.wordBoundsRE.split(line)
+        words = self.wordBoundre.split(line)
         lineindex = 0		# keep track of position in list of chars
         self.dwds = []; self.cwds = []		# collections for Explainer
         for wORD in words:
-            if not wORD: continue	# sre.split can produce empty returns
+            if not wORD: continue	# re.split can produce empty returns
             # catch clitics for non-syllabic treatment, defined as:
             anyvowels = self.vowelRE.search(wORD)
             if not anyvowels and '\'' in wORD:
@@ -208,10 +208,10 @@ class ScansionMachine:
             else:										# anapests
                 need = currlen - normlen
                 candidates = []
-                for p in sre.finditer(r'(?=/xx/)', scansion): 
+                for p in re.finditer(r'(?=/xx/)', scansion): 
                     candidates.append(p.start() + 1)
                 if len(candidates) < need:
-                    for p in sre.finditer(r'(?=xx/)', scansion): candidates.append(p.start())
+                    for p in re.finditer(r'(?=xx/)', scansion): candidates.append(p.start())
                 i = 0
                 while i < currlen:
                     if i in candidates:
@@ -373,9 +373,9 @@ class ScansionMachine:
                 if sylinx < end: self.P.AddFootDivMark(sylinx)
         else:				# anapest(s)
             need = currlen - normlen
-            candidates = [p.start()+1 for p in sre.finditer(r'(?=/xx/)', marks)]
+            candidates = [p.start()+1 for p in re.finditer(r'(?=/xx/)', marks)]
             if len(candidates) < need:
-                morecands = [p.start() for p in sre.finditer(r'(?=xx/)', marks)]
+                morecands = [p.start() for p in re.finditer(r'(?=xx/)', marks)]
                 candidates += morecands
             while start < end:
                 if need and (start in candidates):

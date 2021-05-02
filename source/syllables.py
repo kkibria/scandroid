@@ -33,9 +33,9 @@
 # A note on "vowels": there's always an ambiguity about 'y', which I've resolved
 # more or less by hunch individually in each place.
 
-import sre
-import wx		# need ONLY for:
-defaultEncoding = wx.GetDefaultPyEncoding()		# for DivideCV only!
+import re
+# import wx		# need ONLY for:
+# defaultEncoding = wx.GetDefaultPyEncoding()		# for DivideCV only!
 
 SIBILANTS = '40xzjgsc'			# weird ones are encoded, 7th bit set
 MIDS = 'bdfgklmnpstw%0245'
@@ -59,25 +59,25 @@ def handleVyV(match):
 
 class Syllabizer:
     def __init__(self):
-        self.suffixes = sre.compile(r""" [^aeiouhr]y\b | er\b | age | est | ing | 
+        self.suffixes = re.compile(r""" [^aeiouhr]y\b | er\b | age | est | ing | 
                 ness\b | less | ful | ment\b | time\b | [st]ion | [ia]ble\b | [ct]ial
                 | [ctg]iou | [ctg]ious
-            """, sre.VERBOSE)
+            """, re.VERBOSE)
 #	| ical\b | icle\b | ual\b | ism \b | [ae]ry\b		# don't work (as 2-syl)
             # Note: left out special-character "*ag$" and "tim$" -- don't understand!
             # final syllable spelled with liquid or nasal and silent 'e'
-        self.liquidterm = sre.compile(r" [^aeiouy] [rl] e \b", sre.X)
+        self.liquidterm = re.compile(r" [^aeiouy] [rl] e \b", re.X)
         # the collection of special-character groups
-        self.finalE = sre.compile(r" [^aeiouy] e \b ", sre.X)
-        self.CiVcomb = sre.compile(r" [st] i [aeiouy] ", sre.X)
-        self.CCpair = sre.compile(r" [cgprstw] h | gn |  gu[aeiouy] | qu | ck", sre.X)
-        self.VyVcomb = sre.compile(r" [aeiou] y [aeiou]", sre.X) 
+        self.finalE = re.compile(r" [^aeiouy] e \b ", re.X)
+        self.CiVcomb = re.compile(r" [st] i [aeiouy] ", re.X)
+        self.CCpair = re.compile(r" [cgprstw] h | gn |  gu[aeiouy] | qu | ck", re.X)
+        self.VyVcomb = re.compile(r" [aeiou] y [aeiou]", re.X) 
             # vowel pairs reliably disyllabic (not 'ui' ('juice' vs 'intuition'! some 
             # 'ue' missed ('constituent'), some 'oe' ('poem'))
-        self.sylvowels = sre.compile(r" [aeiu] o | [iu] a | iu", sre.X)
+        self.sylvowels = re.compile(r" [aeiu] o | [iu] a | iu", re.X)
             # divisions should fall before or after, not within, these consonant pairs
-        self.splitLeftPairs = sre.compile(r""" [bdfk%02] [rl] | g [rln] | [tw] r | p
-                [rlsn] s [nml]""", sre.X)
+        self.splitLeftPairs = re.compile(r""" [bdfk%02] [rl] | g [rln] | [tw] r | p
+                [rlsn] s [nml]""", re.X)
 
     def Syllabize(self, word):
         if len(word) < 3: return [word.upper()]	# 'ax' etc
@@ -108,8 +108,8 @@ class Syllabizer:
             self.wd = self.wd[:apostrophe]	# cut off ' or 's until last stage
         # cut final s/d from plurals/pasts if not syllabic
         self.isPast = self.isPlural = False			# defaults used also for suffixes
-        if sre.search(r"[^s]s\b", self.wd): self.isPlural = True	# terminal single s (DUMB!)
-        if sre.search(r"ed\b", self.wd): self.isPast = True		# terminal 'ed'
+        if re.search(r"[^s]s\b", self.wd): self.isPlural = True	# terminal single s (DUMB!)
+        if re.search(r"ed\b", self.wd): self.isPast = True		# terminal 'ed'
         if self.isPast or self.isPlural: self.wd = self.wd[:-1]
         # final-syl test turns out to do better work *after* suffices cut off
         self.FindSuffix()
@@ -137,7 +137,7 @@ class Syllabizer:
         for res in resultslist:
             # if no vowel left before, false suffix ('singing')
             # n.b.: will choke on 'quest' etc! put in dictionary, I guess
-            if not sre.search('[aeiouy]', self.wd[:res[1]]): break
+            if not re.search('[aeiouy]', self.wd[:res[1]]): break
             if res[0] == 'ing' and self.wd[res[1]-1] == self.wd[res[1]-2]:
                 self.sylBounds.append(res[1] - 1)	# freq special case
             else: self.sylBounds.append(res[1])	# sorted later
@@ -167,11 +167,11 @@ class Syllabizer:
         The messy encoding-and-sometimes-decoding of nonsyllabic final 'e' 
         after a C seems the best that can be done, though I hope not. 
         """
-        if sre.search(r"[^aeiouy]e\b", self.wd):	# nonsyllabic final e after C
+        if re.search(r"[^aeiouy]e\b", self.wd):	# nonsyllabic final e after C
             if ((not self.isPlural or self.wd[-2] not in SIBILANTS) and (not
                                          self.isPast or self.wd[-2] not in 'dt')):
                 self.wd = self.wd[:-1] + encode(self.wd[-1])
-            if not sre.search(r"[aeiouy]", self.wd):		# any vowel left??
+            if not re.search(r"[aeiouy]", self.wd):		# any vowel left??
                 self.wd = self.wd[:-1] + 'e'		# undo the encoding
         self.wd = self.CiVcomb.sub(handleCiV, self.wd)
         self.wd = self.CCpair.sub(handleCC, self.wd)
@@ -187,13 +187,13 @@ class Syllabizer:
         """
         unicodeVowels = u"[ae\N{LATIN SMALL LETTER E WITH GRAVE}iouy]+"
         uniConsonants = u"[^ae\N{LATIN SMALL LETTER E WITH GRAVE}iouy]+"
-        firstvowel = sre.search(unicodeVowels, self.wd).start()
-        for v in sre.finditer(unicodeVowels, self.wd):
+        firstvowel = re.search(unicodeVowels, self.wd).start()
+        for v in re.finditer(unicodeVowels, self.wd):
             lastvowel = v.end()		# replaced for each group, last sticks
             disyllabicvowels = self.sylvowels.search(v.group())
             if disyllabicvowels:
                 self.sylBounds.append(v.start() + disyllabicvowels.start() + 1)
-        for cc in sre.finditer(uniConsonants, self.wd):
+        for cc in re.finditer(uniConsonants, self.wd):
             if cc.start() < firstvowel or cc.end() >= lastvowel: continue
             numcons = len(cc.group())
             if numcons < 3: pos = cc.end() - 1	# before single C or betw. 2
@@ -253,11 +253,11 @@ inputSingleWords = True
 if __name__ == '__main__':
     s = Syllabizer()
     if inputSingleWords:
-        st = raw_input()
+        st = input()
         while st != "quit":
             res = s.Syllabize(st)
-            print res
-            st = raw_input()
+            print (res)
+            st = input()
     else:
         fin = open('wordlist.txt', 'rU')
         fout = open('results.txt', 'w')
@@ -267,7 +267,7 @@ if __name__ == '__main__':
                 if words[0][0] in '#/;': continue
                 else:
                     res = s.Syllabize(words[0])
-                    fout.write(`res`)
+                    fout.write(f'{res}')
                     fout.write('\n')
         fin.close()
         fout.close()

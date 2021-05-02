@@ -102,7 +102,7 @@ class MyTextSTC(stc.StyledTextCtrl):
         # following shd probably have settable fontsize per screen like TCs above
         self.StyleSetSpec(stc.STC_STYLE_DEFAULT, "size:14,face:Courier")
         self.Bind(stc.EVT_STC_DOUBLECLICK, self.OnDoubleClick)
-        wx.EVT_CHAR(self, self.OnKeyDown)
+        wx.EvtHandler.Bind(self, wx.EVT_CHAR, self.OnKeyDown)
 
     def GetStringSelection(self): return self.GetSelectedText()
 

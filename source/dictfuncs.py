@@ -57,7 +57,7 @@ class ScanDict:
             wildcard = "All files (*.*) | *.*"
             dlg = wx.FileDialog(None, message="Locate the scandictionary file",
                                 defaultDir=defdir, defaultFile="", wildcard=wildcard,
-                                style=wx.OPEN | wx.CHANGE_DIR)
+                                style=wx.FD_OPEN | wx.FD_CHANGE_DIR)
             if dlg.ShowModal() == wx.ID_OK:
                 f = open(dlg.GetPath())
                 dlg.Destroy()
