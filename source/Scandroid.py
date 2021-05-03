@@ -70,7 +70,7 @@ class ScandroidFrame(wx.Frame):
         """Establish all visible elements of the program's main window.
         
         That's two separate rows of buttons plus menus. The text fields
-        have already beeen created in the __init__; here they get put into
+        have already been created in the __init__; here they get put into
         sizers with the rest and displayed.
         """
         self.ScanBtn = wx.Button(self, 1001, label="Scan", size=(-1, -1))
