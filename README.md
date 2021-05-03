@@ -3,6 +3,9 @@ Scans English verse in iambic and anapestic meters. The  version 1.1 source is c
 
 My ultimate goal is to use this for song lyric writing.
 
+## User's Manual
+The manual for version 1.1 (pdf) is available at Hartman's page. I am not sure if the manual is covered under GPL, thats why I didn't copy it in this repo.
+
 ## Metrical Foot
 It is an unit consists of a pattern of stressed and unstress syllables.
 
