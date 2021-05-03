@@ -105,11 +105,13 @@ class Explainer:
 
     def ExpLexStress(self, dictwords, compwords):
         self.Explain("  (CAPS = stressed)\ndict. word stresses: ")
-        self.Explain(str(' / ' + ' / '.join(' '.join(s.encode('utf-8')
-                                                     for s in w) for w in dictwords)) + ' / ')
+        self.Explain(' / ' + 
+                     ' / '.join(' '.join(s for s in w) for w in dictwords) +
+                     ' / ')
         self.Explain("\ncalc. word stresses: ")
-        self.Explain(' / ' + ' / '.join(' '.join(s.encode(defaultEncoding) 
-                                                     for s in w) for w in compwords) + ' / ')
+        self.Explain(' / ' + 
+                     ' / '.join(' '.join(s for s in w) for w in compwords) + 
+                     ' / ')
         self.Explain("\nany ambiguous stresses will be resolved in the next step")
         
     def ExpChooseAlg(self, alg, ambigs):

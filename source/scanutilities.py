@@ -47,7 +47,7 @@ def uniquePermutations(lst):
 
 def dictinvert(d):			# Jason Drew from AS Cookbook
     inv = {}
-    for k, v in d.iteritems():
+    for k, v in iter(d.items()):
         keys = inv.setdefault(v, [])
         keys.append(k)
     return inv
@@ -63,7 +63,7 @@ def footfinder(fDict, scansion, chunksize, startpoint, endpoint):
     """
     while startpoint < endpoint:
         possfoot = scansion[startpoint:startpoint+chunksize]
-        if fDict.has_key(possfoot):
+        if possfoot in fDict:
             startpoint += chunksize
             yield fDict[possfoot], startpoint
         else: yield '', startpoint

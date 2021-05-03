@@ -63,7 +63,7 @@ class ScansionMachine:
         # Tricky: hyphens separate tokens, apostrophes don't; hyphen must go
         # first in list; double-quote needs escape; and please
         # note subtle placement of '+', which allows punct+space to be a  string
-        words = self.wordBoundre.split(line)
+        words = self.wordBoundsRE.split(line)
         lineindex = 0		# keep track of position in list of chars
         self.dwds = []; self.cwds = []		# collections for Explainer
         for wORD in words:
@@ -218,7 +218,7 @@ class ScansionMachine:
                         footlist.append('anapest')
                         i += 3
                     else:
-                        if footDict.has_key(scansion[i:i+2]):
+                        if scansion[i:i+2] in footDict:
                             footlist.append(footDict[scansion[i:i+2]])
                         else: return ([], [])
                         i += 2
@@ -256,7 +256,7 @@ class ScansionMachine:
             if len(scansion) > 0:
                 lastfoot = ''
                 if scansion[-1] == 'x' and len(scansion) > 2:
-                    if footDict.has_key(scansion[-3:]):
+                    if scansion[-3:] in footDict:
                         lastfoot = footDict[scansion[-3:]]
                         scansion = scansion[:-3]
                 for (footname, sylinx) in footfinder(footDict, scansion, 2, 0, len(scansion)):
@@ -380,14 +380,18 @@ class ScansionMachine:
             while start < end:
                 if need and (start in candidates):
                     foot = marks[start:start+3]
-                    if footDict.has_key(foot): lineDat['footlist'].append(footDict[foot])
-                    else: return self.P.GetScanString(), False
+                    if foot in footDict:
+                        lineDat['footlist'].append(footDict[foot])
+                    else: 
+                        self.P.GetScanString(), False
                     start += 3
                     need -= 1
                 else:
                     foot = marks[start:start+2]
-                    if footDict.has_key(foot): lineDat['footlist'].append(footDict[foot])
-                    else: return self.P.GetScanString(), False
+                    if foot in footDict: 
+                        lineDat['footlist'].append(footDict[foot])
+                    else: 
+                        return self.P.GetScanString(), False
                     start += 2
                 if start < end: self.P.AddFootDivMark(start)
         if lineDat['lastfoot']: lineDat['footlist'].append(lineDat['lastfoot'])
@@ -472,7 +476,7 @@ class ScansionMachine:
             # we find x/x, //x iff tail is odd len; do NOT find 3rd paeon!
             if marks[-1] == 'x' and tail % 2 != 0:
                 startlastfoot = len(marks) - 3
-                if footDict.has_key(marks[-3:]): 
+                if marks[-3:] in footDict: 
                     lineDat['lastfoot'] = footDict[marks[-3:]]
                     self.P.AddFootDivMark(startlastfoot)
                 else: return self.P.GetScanString(), False
@@ -610,11 +614,11 @@ class ScansionMachine:
             tailstart = scansion.rfind('/')					# point to penult
             tailstart = scansion.rfind('/', 0, tailstart)	#   stress in line
             tail = numsyls - tailstart - 1
-            if AnapSubs.has_key(scansion[-tail:]):
+            if scansion[-tail:] in AnapSubs:
                 lastfoot = AnapSubs[scansion[-tail:]]
             else:
                 tail += 1		# desperation: one more foot to try
-                if AnapSubs.has_key(scansion[-tail:]):
+                if scansion[-tail:] in AnapSubs:
                     lastfoot = AnapSubs[scansion[-tail:]]
                 else: return []                    # unknown last foot
             needfeet -= 1
@@ -651,7 +655,7 @@ class ScansionMachine:
                 stride = int(digit)
                 if f + stride >= len(scansion): endf = None
                 else: endf = f+stride
-                if AnapSubs.has_key(scansion[f:endf]):
+                if scansion[f:endf] in AnapSubs:
                     footlist.append(AnapSubs[scansion[f:endf]])
                     f += stride
                 else: return []
@@ -673,12 +677,12 @@ class ScansionMachine:
             tailstart = marks.rfind('/')					# point to penult
             tailstart = marks.rfind('/', 0, tailstart)	#   stress in line
             tail = numsyls - tailstart - 1
-            if AnapSubs.has_key(marks[-tail:]):
+            if marks[-tail:] in AnapSubs:
                 lineDat['lastfoot'] = AnapSubs[marks[-tail:]]
             else:
                 tail += 1		# desperation: one more foot to try
                 tailstart -= 1
-                if AnapSubs.has_key(marks[-tail:]):
+                if marks[-tail:] in AnapSubs:
                     lineDat['lastfoot'] = AnapSubs[marks[-tail:]]
                 else:
                     logger.Explain("\nFAIL! unknown last foot")
@@ -741,7 +745,7 @@ class ScansionMachine:
                 if f + stride >= len(marks): endf = None
                 else: endf = f+stride
                 sylinx += stride
-                if AnapSubs.has_key(marks[f:endf]):
+                if marks[f:endf] in AnapSubs:
                     lineDat['footlist'].append(AnapSubs[marks[f:endf]])
                     if endf: self.P.AddFootDivMark(sylinx)
                     f += stride
