@@ -1,7 +1,7 @@
 # scandroid
-Scans english verse in *iambic* and *anapestic* meters. The version 1.1 source is copied from [Charles O. Hartman's page](https://oak.conncoll.edu/cohar/Programs.htm).
+Scans english verse in *iambic* and *anapestic* meters. The version 1.1(2015) source is copied from [Charles O. Hartman's page](https://oak.conncoll.edu/cohar/Programs.htm).
 
-My ultimate goal is to use this for song lyric writing.
+I have updated the code for python 3. My ultimate goal is to use this for song lyric writing.
 
 ## User's Manual
 The manual for version 1.1 (pdf) is available at Hartman's page. I am not sure if the manual is covered under GPL, thats why I didn't copy it in this repo.
