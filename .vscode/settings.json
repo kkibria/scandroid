@@ -1,5 +1,12 @@
 {
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=wx"
-    ]
+    ],
+    "python.pythonPath": "~/AppData/Local/Programs/Python/Python39/python.exe",
+    "[python]": {
+    
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ]
+    }
 }
