@@ -25,7 +25,7 @@ from scanfuncs import *				# the Scansion Machine
 
 # global to this module:
 FORKSTEP = 3			# in iambics, the step at which the two algorithms divide
-dummyevent = wx.MouseEvent(wx.wxEVT_LEFT_UP)		# to call button directly
+dummyevent = wx.MouseEvent(wx.EVT_LEFT_UP)		# to call button directly
 
 class ScandroidFrame(wx.Frame):
 ## - - - - - initializations
@@ -522,7 +522,7 @@ class ScandroidFrame(wx.Frame):
                     style=wx.SAVE | wx.CHANGE_DIR | wx.OVERWRITE_PROMPT)
         if dlg.ShowModal() == wx.ID_OK:
             defenc = wx.GetDefaultPyEncoding()
-            f = open(dlg.GetPath(), 'wU')
+            f = open(dlg.GetPath(), 'w')
             textToWrite = self.WholeText.GetText()
             textToWrite = textToWrite.encode(defenc)
             f.write(textToWrite)

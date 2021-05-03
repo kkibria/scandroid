@@ -52,7 +52,7 @@ class ScanDict:
             else:
                 sys.exit("Only Mac and Win supported! Sorry!")
         try:
-            f = open(self.dictopen, 'rU')
+            f = open(self.dictopen, 'r')
         except IOError:			# dict file has gone astray
             wildcard = "All files (*.*) | *.*"
             dlg = wx.FileDialog(None, message="Locate the scandictionary file",
@@ -83,8 +83,10 @@ class ScanDict:
         StyledTextCtrl in scanstc.py.
         """
         word = selstring.lower()			# stripped in scanstc.py before it gets here
-        if self.Dict.has_key(word): syls = self.Dict[word]
-        else: syls = self.mom.S.Syllabize(word)
+        if word in self.Dict: 
+            syls = self.Dict[word]
+        else: 
+            syls = self.mom.S.Syllabize(word)
         s = ''
         for syl in syls: s += syl + ' '
         dlg = DictEditDialog(self, -1, s)
