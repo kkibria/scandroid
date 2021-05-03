@@ -1,4 +1,4 @@
-# scanmain.py 1.1
+# Scandroid.py 1.1
 #
 # the Scandroid
 # Copyright (C) 2005 Charles Hartman
@@ -25,7 +25,7 @@ from scanfuncs import *				# the Scansion Machine
 
 # global to this module:
 FORKSTEP = 3			# in iambics, the step at which the two algorithms divide
-dummyevent = wx.MouseEvent(wx.EVT_LEFT_UP)		# to call button directly
+dummyevent = wx.MouseEvent(wx.wxEVT_LEFT_UP)		# to call button directly
 
 class ScandroidFrame(wx.Frame):
 ## - - - - - initializations

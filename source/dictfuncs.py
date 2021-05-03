@@ -1,4 +1,4 @@
-# scandictfuncs.py 1.1
+# dictfuncs.py 1.1
 #
 # the Scandroid
 # Copyright (C) 2005 Charles Hartman
