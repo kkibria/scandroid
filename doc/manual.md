@@ -69,7 +69,7 @@ very much appreciate hearing about it.
 
 # 2. The Window
 
-<div style="text-align:center"><img style="width: 80%;" src="fig2.1.png"></div>
+![fig2.1](fig2.1.png)
 
 When you run the Scandroid, you’ll see a window with several parts. The next page
 shows an illustration of it. Here’s a list of the parts from top to bottom:
@@ -342,7 +342,7 @@ in capitalizing, or the stress won’t be recognized.) Type the other syllables 
 in lowercase, even if the word is a proper noun beginning with a capital
 letter; this won’t affect how the word appears in the line.
 
-<div style="text-align:center"><img style="width: 40%;" src="fig6.1.png"></div>
+![fig6.1](fig6.1.png)
 
 3. When you click OK in the dialog, the scansion field clears; the Scandroid is
 ready to start the process over again, taking the dictionary-edited word into
