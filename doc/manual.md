@@ -59,7 +59,7 @@ inside the application. On Windows, it’s a separate file called scandictionary
 this file where the Scandroid can find it, and don’t mess around with it. If you defy
 either of these admonitions, the program will still work, but it won’t work as well,
 because it will be stupider than usual about how words are divided into syllables and
-which syllables are stressed. See section 8: The Dictionary for details.
+which syllables are stressed. See section **8: The Dictionary** for details.
 
 If you want to install the Scandroid on another system such as Linux, it shouldn’t be
 very difficult, but you’ll have to build it from the source code, which is available in the
@@ -78,14 +78,14 @@ shows an illustration of it. Here’s a list of the parts from top to bottom:
 step. You can’t edit them. (I’m not sure what the point of the program would be
 if you could.)
 
-2. **Line to be scanned**. This is also read-only (or almost; see 6: Fixing the Line).
+2. **Line to be scanned**. This is also read-only (or almost; see **6: Fixing the Line**).
 You don’t type lines here. Instead, when you double-click a line in the Text
-panel, it gets copied into this field to be scanned. (See 3: Quick How-To.) These
+panel, it gets copied into this field to be scanned. (See **3: Quick How-To**.) These
 two one-line fields at the top of the window, 1. and 2., are sometimes referred to
 in this manual as “the workboxes.”
 
-3. **Scansion buttons**. These do the main business of the program. For details see 3:
-Quick How-To. Most of them have menu equivalents with keyboard shortcuts.
+3. **Scansion buttons**. These do the main business of the program. For details see **3:
+Quick How-To**. Most of them have menu equivalents with keyboard shortcuts.
 
 4. **Notes panel**. This is where the Scandroid reports how it arrives at its
 intermediate results so as to explain in some detail the marks that appear in the
@@ -97,19 +97,13 @@ You can type lines in or, better, load a text file. The following section tells 
 how, and the following section explains it in detail.
 
 6. **Text buttons**. These are for handling text and files. Most of these buttons, too,
-have menu and keystroke equivalents. For details see 4: Text Files.
+have menu and keystroke equivalents. For details see **4: Text Files**.
 
 7. **Status bar**. This keeps you posted about the current parameters, or conditions,
 for scansion. It tells you whether the “metron,” the basic foot, is the iamb (x/) or
 the anapest (xx/). If the program is assuming a regular line-length, the status bar
 tells you how long the line is. If not, it informs you that line-length is being
 treated as variable: the program will recalculate it, as best it can, for each line.
-
-
-
-... work in progress ...
-will be split in multiple files
-
 
 # 3. Quick How-To
 Here’s a summary of the basic steps in using the Scandroid. Later sections explain
@@ -121,8 +115,8 @@ keyboard equivalents. When the keyboard commands are mentioned here, “cmd”
 means that you hold down your computer’s “command” modifier key—on Mac, the
 Apple key; on Windows, Ctrl—while you press the relevant letter or number key.
 1. Click the Load New button (or press cmd-L). In the resulting dialog, select a
-plain-text file containing the lines you want to scan—a poem, presumably. (See 4:
-Text Files for details.) One sample (Keats’s ode “To Autumn” is included in the
+plain-text file containing the lines you want to scan—a poem, presumably. (See **4:
+Text Files** for details.) One sample (Keats’s ode “To Autumn” is included in the
 program archive.)
 2. Double-click a line in the Text panel. This selects the line and copies it into the
 work-box at the top of the window. There’s also an item in the Scan menu, “Next
@@ -134,10 +128,10 @@ process: dividing the line into syllables and putting a mark over each one in th
 scansion work-box. In the Notes window you’ll see the name of this step
 (SYLLABLES), followed by lists of words that the Scandroid found in its dictionary
 and words whose syllabification it figured out from general principles. (You can
-override its decisions; see 6: Fixing a Line and 8: The Dictionary.)
+override its decisions; see **6: Fixing a Line** and **8: The Dictionary**.)
 4. Keep clicking the Step button to follow the next stages in the scansion process.
 There are around half a dozen steps; the number varies according to
-circumstances. (See 5: What Happens When You Load a File and 9: Algorithms.)
+circumstances. (See **5: What Happens When You Load a File** and **9: Algorithms**.)
 If you want to skip straight to the conclusion of the scanning process for the line,
 click the Scan button (or press cmd-2). All the explanations appear in the Notes
 window as if you had gone through the steps one by one.
@@ -146,12 +140,12 @@ assumptions the program makes:
     1. If it’s wrong about how a word is divided into syllables, or how it’s
 stressed, double-click the word. Do this in the workbox—not down in the
 Text panel! (That would just select the line again and restart the scansion.)
-Follow the directions in the dialog box that comes up. (See 6: Fixing a Line
-or details, and 7: Lexical Stresses and 8: The Dictionary for still more.)
+Follow the directions in the dialog box that comes up. (See **6: Fixing a Line**
+for details, and **7: Lexical Stresses** and **8: The Dictionary** for still more.)
     2. If the program is wrong about the metron—if it’s trying to scan as
 iambic lines that you know are anapestic, or vice versa—you can force the
 opposite choice the other way through items available in the Scan menu.
-(For background, see 5: What Happens When You Load a File.)
+(For background, see **5: What Happens When You Load a File**.)
 6. When the scansion is complete, so that clicking Step has no further effect, you
 can store the scansion down in the Text panel by clicking the Save button or
 pressing cmd-3. This displays the scansion above the line it belongs to, and clears
@@ -235,8 +229,8 @@ the ‘è’ in “fixèd,” for example, as a cue to give the word two syllabl
 
 You can help the Scandroid behave properly by making sure that any title line at the
 top of the file is indented with one or more Tab characters (not spaces—see the next
-paragraph). This makes the program ignore the line at a key testing stage (see 5: What
-Happens When You Load a File). The same is true of any author attribution or other
+paragraph). This makes the program ignore the line at a key testing stage (see **5: What
+Happens When You Load a File**). The same is true of any author attribution or other
 non-verse material at the bottom of the file, or section titles in the middle of it: make
 sure they’re Tabbed in from the left margin. This doesn’t prevent you from doubleclicking such a line and scanning it, though the results are obviously unpredictable.
 
@@ -430,7 +424,7 @@ There are at least two major flaws in this system, one resolved and one not. Fir
 are ambiguities: is “can” an auxiliary verb (almost never stressed), or a transitive verb
 or a noun (almost always stressed)? The Scandroid includes a mechanism for taking this
 possibility into account. (The mechanism depends on having a method of measuring
-the relative success of two scansions. See 9: Algorithms.)
+the relative success of two scansions. See **9: Algorithms**.)
 
 To support this solution to the gaps in the system, some entries in the dictionary include
 indications of ambiguous stress. Monosyllabic examples include words like “that”: when
@@ -518,8 +512,9 @@ The Scandroid has not one but two approaches to the central problem of scanning 
 iambic metrical line. The two procedures, or algorithms, begin the same way, diverge in
 their middle stages, and come together again at the end.
 
-The program always starts by identifying syllables and lexical stresses (see 7. Lexical
-Stress), provisionally considering all other syllables as unstressed. This gives it a
+The program always starts by identifying syllables and lexical stresses (see **[7. Lexical
+Stress](#7-Lexical-Stress)**),
+provisionally considering all other syllables as unstressed. This gives it a
 preliminary sequence of stress-and-slack marks to work with. Then it figures out how to
 group these preliminary marks into feet; this is where the two methods differ, as
 described below. After that it checks for promoted stresses: syllables not prominent in
@@ -594,12 +589,12 @@ is not as good as the first algorithm (near 100%, depending on lexical details).
 the two algorithms differ on about 10% of scansions. The number of iambic pentameter
 lines that elude both of them is quite small. Investigation so far suggests that almost
 every instance in which this happens is traceable to difficulties at the lexical-stress stage.
-(See 6. Fixing a Line, and 8. The Dictionary.)
+(See **6. Fixing a Line**, and **8. The Dictionary**.)
 
 The Scandroid chooses between algorithms as follows. It parses the line into words,
 assigning syllables and stress to each word either as given in the dictionary or as
 calculated by its own syllabification routines. It may encounter stress-ambiguities, as
-described in 8. The Dictionary. The program constructs all the resulting hypothetical
+described in **8. The Dictionary**. The program constructs all the resulting hypothetical
 preliminary scansions. (If there’s one ambiguity, it builds two alternative lines of
 preliminary marks; if there are two, it builds four alternatives.) It tries out—silently and
 behind the scenes—both algorithms on every combination of preliminary lexical marks.
