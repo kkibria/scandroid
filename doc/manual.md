@@ -440,13 +440,13 @@ Scandroid understands nothing about syntax, and has no way to distinguish these 
 uses of the word. The solution—not ideal, but the best available within this design—is
 to mark “that” as ambiguous. Its dictionary entry looks like this:
 ```
-that       that*
+that            that*
 ```
 The first “word” is the actual spelling, and the second is the syllables-and-stress code.
 The entry for a normal polysyllable would look like this:
 
 ```
-normal       NOR mal
+normal          NOR mal
 ```
 
 As is shown here, monosyllables are marked as ambiguous with an asterisk at the end.
@@ -454,7 +454,7 @@ There must not be a blank space between the word and the asterisk.
 
 Stress-ambiguous polysyllables are entered in the dictionary all in lowercase:
 ```
-convict       con vict
+convict         con vict
 ```
 In this case the stress pattern is ambiguous because either syllable might be stressed,
 depending on whether the word is a noun (CON vict) or a verb (con VICT).
