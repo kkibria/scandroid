@@ -59,7 +59,7 @@ inside the application. On Windows, it’s a separate file called scandictionary
 this file where the Scandroid can find it, and don’t mess around with it. If you defy
 either of these admonitions, the program will still work, but it won’t work as well,
 because it will be stupider than usual about how words are divided into syllables and
-which syllables are stressed. See section **8: The Dictionary** for details.
+which syllables are stressed. See section **[8: The Dictionary](#8-the-dictionary)** for details.
 
 If you want to install the Scandroid on another system such as Linux, it shouldn’t be
 very difficult, but you’ll have to build it from the source code, which is available in the
@@ -78,9 +78,9 @@ shows an illustration of it. Here’s a list of the parts from top to bottom:
 step. You can’t edit them. (I’m not sure what the point of the program would be
 if you could.)
 
-2. **Line to be scanned**. This is also read-only (or almost; see **6: Fixing the Line**).
+2. **Line to be scanned**. This is also read-only (or almost; see **[6: Fixing the Line](#6-fixing-a-line)**).
 You don’t type lines here. Instead, when you double-click a line in the Text
-panel, it gets copied into this field to be scanned. (See **3: Quick How-To**.) These
+panel, it gets copied into this field to be scanned. (See **[3: Quick How-To](3-quick-how-to)**.) These
 two one-line fields at the top of the window, 1. and 2., are sometimes referred to
 in this manual as “the workboxes.”
 
@@ -97,7 +97,7 @@ You can type lines in or, better, load a text file. The following section tells 
 how, and the following section explains it in detail.
 
 6. **Text buttons**. These are for handling text and files. Most of these buttons, too,
-have menu and keystroke equivalents. For details see **4: Text Files**.
+have menu and keystroke equivalents. For details see **[4: Text Files](#4-text-files)**.
 
 7. **Status bar**. This keeps you posted about the current parameters, or conditions,
 for scansion. It tells you whether the “metron,” the basic foot, is the iamb (x/) or
@@ -513,7 +513,7 @@ iambic metrical line. The two procedures, or algorithms, begin the same way, div
 their middle stages, and come together again at the end.
 
 The program always starts by identifying syllables and lexical stresses (see **[7. Lexical
-Stress](#7-Lexical-Stress)**),
+Stresses](#7-lexical-stresses)**),
 provisionally considering all other syllables as unstressed. This gives it a
 preliminary sequence of stress-and-slack marks to work with. Then it figures out how to
 group these preliminary marks into feet; this is where the two methods differ, as
