@@ -488,11 +488,11 @@ class ScandroidFrame(wx.Frame):
         else: defDir = self.loaddir
         dlg = wx.FileDialog(self, message="Choose a plain text file",
                 defaultDir=defDir, defaultFile="",
-                wildcard=wildcard, style=wx.OPEN | wx.CHANGE_DIR)
+                wildcard=wildcard, style=wx.FD_OPEN | wx.FD_CHANGE_DIR)
         if dlg.ShowModal() == wx.ID_OK:
             self.ClearWorkBoxes()
             self.NotesWindow.Clear()
-            f = open(dlg.GetPath(), 'rU')
+            f = open(dlg.GetPath(), 'r')
             self.loaddir = dlg.GetPath()
             # retain line-numbering status, but refigure width of margin
             if self.lineNumsVisible:
@@ -506,7 +506,8 @@ class ScandroidFrame(wx.Frame):
             data = f.read()
             if sys.platform == 'darwin': enc = 'mac-roman'
             else: enc = 'latin-1'
-            self.WholeText.DisplayText(unicode(data, enc, 'replace'))
+            self.WholeText.DisplayText(data)
+            # self.WholeText.DisplayText(unicode(data, enc, 'replace'))
             #self.WholeText.DisplayText(unicode(data, defaultEncoding, 'replace'))
 # ORIGINAL VERSION; READS UP TO LINE CONTAINING ACCENT, ONLY
             #self.WholeText.DisplayText(f.read())
@@ -519,12 +520,12 @@ class ScandroidFrame(wx.Frame):
     def OnSaveAllBtn(self, evt):
         dlg = wx.FileDialog(self, message="File to save scanned text",
                     defaultDir=os.getcwd(), defaultFile='scansion', wildcard="*.txt",
-                    style=wx.SAVE | wx.CHANGE_DIR | wx.OVERWRITE_PROMPT)
+                    style=wx.FD_SAVE | wx.FD_CHANGE_DIR | wx.FD_OVERWRITE_PROMPT)
         if dlg.ShowModal() == wx.ID_OK:
-            defenc = wx.GetDefaultPyEncoding()
+            # defenc = wx.GetDefaultPyEncoding()
             f = open(dlg.GetPath(), 'w')
             textToWrite = self.WholeText.GetText()
-            textToWrite = textToWrite.encode(defenc)
+            # textToWrite = textToWrite.encode(defenc)
             f.write(textToWrite)
             #for c in range(self.WholeText.GetLineCount()):
                 #f.write(self.WholeText.GetLine(c))

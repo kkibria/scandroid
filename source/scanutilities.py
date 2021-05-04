@@ -41,7 +41,8 @@ def uniquePermutations(lst):
     for s in getPermutations(lst): slist.append(s)
     u = {}					# this common trick got from Tim Peters, ASC
     for s in slist: u[s] = 1
-    retlist = u.keys()
+    # retlist = u.keys()
+    retlist = list(u)
     retlist.sort()
     return retlist
 
