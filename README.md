@@ -30,15 +30,27 @@ its syllables across multiple words.
 
 For linting correctly in VS code,
 we need to whitelist ``wxPython`` binary package for ``pylint``.
-I use VS code for development and I have multiple versions of python
-installed and therefore, point ``pythonPath`` to 
-correct python 3 version that has ``wxPython`` installed in it so that ``pylint`` can find ``wxPython``.
 
+File ``.vscode/settings.json``
 ```json
 {
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=wx"
     ],
+}
+```
+
+I use VS code for development and I have multiple versions of python
+installed and therefore, point ``pythonPath`` to 
+correct python 3 version that has ``wxPython`` installed in it so that ``pylint`` can find ``wxPython``.
+
+File ``.vscode/settings.json``
+```json
+{
     "python.pythonPath": "~/AppData/Local/Programs/Python/Python39/python.exe",
 }
 ```
+
+> You can also interactively select python version in VS code status bar.
+
+
