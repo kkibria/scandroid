@@ -1,7 +1,5 @@
 # the Scandroid
 
-Note: Copied from the pdf file being converted to markdown format.
-
 ***Version 1.1***
 
 http://cherry.conncoll.edu/cohar/Programs
