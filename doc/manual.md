@@ -84,8 +84,9 @@ panel, it gets copied into this field to be scanned. (See **[3: Quick How-To](#3
 two one-line fields at the top of the window, 1. and 2., are sometimes referred to
 in this manual as “the workboxes.”
 
-3. **Scansion buttons**. These do the main business of the program. For details see **3:
-Quick How-To**. Most of them have menu equivalents with keyboard shortcuts.
+3. **Scansion buttons**. These do the main business of the program. For
+details see **[3: Quick How-To](#3-quick-how-to)**. Most of them have menu
+equivalents with keyboard shortcuts.
 
 4. **Notes panel**. This is where the Scandroid reports how it arrives at its
 intermediate results so as to explain in some detail the marks that appear in the
