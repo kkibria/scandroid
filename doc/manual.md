@@ -68,6 +68,9 @@ wxPython (the versions used are shown in the startup screen). If you do this, I 
 very much appreciate hearing about it.
 
 # 2. The Window
+
+![fig2.1](fig2.1.png)
+
 When you run the Scandroid, you’ll see a window with several parts. The next page
 shows an illustration of it. Here’s a list of the parts from top to bottom:
 
@@ -102,7 +105,7 @@ the anapest (xx/). If the program is assuming a regular line-length, the status 
 tells you how long the line is. If not, it informs you that line-length is being
 treated as variable: the program will recalculate it, as best it can, for each line.
 
-__screenshot__
+
 
 ... work in progress ...
 will be split in multiple files
@@ -181,13 +184,13 @@ they’re off by default. Nor is there any way to save them when you save the fi
 scanning in the workbox at the top of the window. (This is to prevent
 inconsistencies that could result if you were to edit the line that’s being scanned.)
 As a result:  
-(**a**) You can edit a line before you select it to be scanned. For example, if
+    1. You can edit a line before you select it to be scanned. For example, if
 something in the spelling or spacing in the lines confuses the program,
 you can Cancel the current scansion, edit the line, and re-select it.  
-(**b**) You can add notes of your own—to the lines, to the scansions saved
+    1. You can add notes of your own—to the lines, to the scansions saved
 over them, or to the top or bottom of the whole text—which will be saved
 to disk when you click the Save Text button.  
-(**c**) This is also how you can trick the program into saving multiple
+    1. This is also how you can trick the program into saving multiple
 scansions: Save one, move the cursor to the right-hand end of it, and
 press Return or Enter to make a blank line between the scansion and the
 line it belongs to. Then re-select the line and scan it again (perhaps
@@ -339,8 +342,7 @@ in capitalizing, or the stress won’t be recognized.) Type the other syllables 
 in lowercase, even if the word is a proper noun beginning with a capital
 letter; this won’t affect how the word appears in the line.
 
-__filedialog figure for dict__ 
-
+![fig6.1](fig6.1.png)
 
 3. When you click OK in the dialog, the scansion field clears; the Scandroid is
 ready to start the process over again, taking the dictionary-edited word into
