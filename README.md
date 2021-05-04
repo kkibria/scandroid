@@ -29,7 +29,7 @@ its syllables across multiple words.
 ## VS code setting
 
 For linting correctly in VS code,
-we need to whitelist ``wxPython`` binary for ``pylint``.
+we need to whitelist ``wxPython`` binary package for ``pylint``.
 I use VS code for development and I have multiple versions of python
 installed and therefore, point ``pythonPath`` to 
 correct python 3 version that has ``wxPython`` installed in it so that ``pylint`` can find ``wxPython``.
