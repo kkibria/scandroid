@@ -139,13 +139,13 @@ If you want to skip straight to the conclusion of the scanning process for the l
 click the Scan button (or press cmd-2). All the explanations appear in the Notes
 window as if you had gone through the steps one by one.
 5. In case something seems wrong with the scansion, you can control several basic
-assumptions the program makes:  
-(**a**) If it’s wrong about how a word is divided into syllables, or how it’s
+assumptions the program makes:
+    1. If it’s wrong about how a word is divided into syllables, or how it’s
 stressed, double-click the word. Do this in the workbox—not down in the
 Text panel! (That would just select the line again and restart the scansion.)
 Follow the directions in the dialog box that comes up. (See 6: Fixing a Line
-for details, and 7: Lexical Stresses and 8: The Dictionary for still more.)  
-(**b**) If the program is wrong about the metron—if it’s trying to scan as
+or details, and 7: Lexical Stresses and 8: The Dictionary for still more.)
+    2. If the program is wrong about the metron—if it’s trying to scan as
 iambic lines that you know are anapestic, or vice versa—you can force the
 opposite choice the other way through items available in the Scan menu.
 (For background, see 5: What Happens When You Load a File.)
