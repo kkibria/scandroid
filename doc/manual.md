@@ -80,7 +80,7 @@ if you could.)
 
 2. **Line to be scanned**. This is also read-only (or almost; see **[6: Fixing the Line](#6-fixing-a-line)**).
 You don’t type lines here. Instead, when you double-click a line in the Text
-panel, it gets copied into this field to be scanned. (See **[3: Quick How-To](3-quick-how-to)**.) These
+panel, it gets copied into this field to be scanned. (See **[3: Quick How-To](#3-quick-how-to)**.) These
 two one-line fields at the top of the window, 1. and 2., are sometimes referred to
 in this manual as “the workboxes.”
 
@@ -114,7 +114,7 @@ Most of the program’s actions can be controlled from its menus, and most of th
 keyboard equivalents. When the keyboard commands are mentioned here, “cmd”
 means that you hold down your computer’s “command” modifier key—on Mac, the
 Apple key; on Windows, Ctrl—while you press the relevant letter or number key.
-1. Click the Load New button (or press cmd-L). In the resulting dialog, select a
+1. Click the ``Load New`` button (or press cmd-L). In the resulting dialog, select a
 plain-text file containing the lines you want to scan—a poem, presumably. (See **4:
 Text Files** for details.) One sample (Keats’s ode “To Autumn” is included in the
 program archive.)
@@ -123,17 +123,17 @@ work-box at the top of the window. There’s also an item in the Scan menu, “N
 unscanned line,” which finds the first line at or below the cursor that doesn’t
 have a scansion directly above it. (They keyboard shortcut is cmd-1—the number
 ‘1’, not lowercase letter ‘L’.)
-3. Click the Step button (or press cmd-T) to perform the first step in the scansion
+3. Click the ``Step`` button (or press cmd-T) to perform the first step in the scansion
 process: dividing the line into syllables and putting a mark over each one in the
 scansion work-box. In the Notes window you’ll see the name of this step
 (SYLLABLES), followed by lists of words that the Scandroid found in its dictionary
 and words whose syllabification it figured out from general principles. (You can
 override its decisions; see **6: Fixing a Line** and **8: The Dictionary**.)
-4. Keep clicking the Step button to follow the next stages in the scansion process.
+4. Keep clicking the ``Step`` button to follow the next stages in the scansion process.
 There are around half a dozen steps; the number varies according to
 circumstances. (See **5: What Happens When You Load a File** and **9: Algorithms**.)
 If you want to skip straight to the conclusion of the scanning process for the line,
-click the Scan button (or press cmd-2). All the explanations appear in the Notes
+click the ``Scan`` button (or press cmd-2). All the explanations appear in the Notes
 window as if you had gone through the steps one by one.
 5. In case something seems wrong with the scansion, you can control several basic
 assumptions the program makes:
@@ -147,14 +147,14 @@ iambic lines that you know are anapestic, or vice versa—you can force the
 opposite choice the other way through items available in the Scan menu.
 (For background, see **5: What Happens When You Load a File**.)
 6. When the scansion is complete, so that clicking Step has no further effect, you
-can store the scansion down in the Text panel by clicking the Save button or
+can store the scansion down in the Text panel by clicking the ``Save`` button or
 pressing cmd-3. This displays the scansion above the line it belongs to, and clears
 both the workboxes. You can Save the scansion at any stage of scanning. If you
 select the same line again and Save again, perhaps at a different stage, the new
 scansion will replace the old one in the Text panel. (You can fool the program
 into preserving multiple scansions; see the end of this section).
-7. All your scansion results on a poem will disappear when you click Load New
-again (or Type New). To preserve your work on disk, click the Save Text
+7. All your scansion results on a poem will disappear when you click ``Load New``
+again (or ``Type New``). To preserve your work on disk, click the ``Save Text``
 button at the bottom of the window. In the dialog that comes up, supply a file
 name. If you Save Text more than once and supply the same name, you’ll be
 asked to confirm that you want to overwrite the existing file. The output is a
@@ -169,8 +169,8 @@ You should browse through these, because some options are described only here.
 “command” key (Apple or Ctrl) and pressing the 1, 2, 3 keys repeatedly. This
 selects the next unscanned line, scans it, and saves it back to the Text panel.
 2. To quit scanning a line without saving the results in the Text panel, click the
-Cancel button. Selecting a new line has the same effect.
-3. An option in the Edit menu lets you turn ON line numbers in the display of
+``Cancel`` button. Selecting a new line has the same effect.
+3. An option in the Edit menu lets you ``turn ON line numbers`` in the display of
 text in the Text panel, or turn them off again. They’re not smart: against the
 convention for printing poetry, they include blank and title lines. That’s why
 they’re off by default. Nor is there any way to save them when you save the file.
@@ -180,26 +180,26 @@ inconsistencies that could result if you were to edit the line that’s being sc
 As a result:  
     1. You can edit a line before you select it to be scanned. For example, if
 something in the spelling or spacing in the lines confuses the program,
-you can Cancel the current scansion, edit the line, and re-select it.  
+you can ``Cancel`` the current scansion, edit the line, and re-select it.  
     1. You can add notes of your own—to the lines, to the scansions saved
 over them, or to the top or bottom of the whole text—which will be saved
-to disk when you click the Save Text button.  
+to disk when you click the ``Save Text`` button.  
     1. This is also how you can trick the program into saving multiple
-scansions: Save one, move the cursor to the right-hand end of it, and
+scansions: ``Save`` one, move the cursor to the right-hand end of it, and
 press Return or Enter to make a blank line between the scansion and the
 line it belongs to. Then re-select the line and scan it again (perhaps
 progressing to a different stage or using different choices). When you click
-the Save button again, the new scansion will be stored above the verseline as usual, but it won’t replace the scansion above the blank line you
+the ``Save`` button again, the new scansion will be stored above the verseline as usual, but it won’t replace the scansion above the blank line you
 created.
 5. The text in the Text panel, the Notes panel, and the workboxes can be selected
 and copied to the clipboard. From there it can be saved into another program
 such as a text editor. This is not the easiest way to save what’s in the Text panel
-(use Save Text), but it’s the only way to preserve what appears in the Notes
+(use ``Save Text``), but it’s the only way to preserve what appears in the Notes
 panel or workboxes as you scan each line. Normally the Notes for one line
 disappear as soon as you select another line. To select and copy text, click inside
 the panel to give it the focus, and then press your system’s keystrokes for “Select
 All” and “Copy”—probably cmd/ctrl-A and cmd/ctrl-C.
-6. The Edit menu includes a Find in text command (cmd-F) so that you can locate
+6. The Edit menu includes a ``Find in text`` command (cmd-F) so that you can locate
 words and phrases in the Text panel. It allows you to specify case-sensitive and
 whole-word-only searches.
 
@@ -261,7 +261,7 @@ pentameter or anapestic tetrameter, fairly easily. A reader who can do that, how
 finds it difficult to say exactly how. The program, which like any program is nothing if
 not a declaration that we can say exactly how something is done, does not have an easy
 time of it, and can make mistakes. This is why there are items in the Scan menu called
-Force iambics and Force anapestics.
+``Force iambics`` and ``Force anapestics``.
 
 When you Load a text file, the Scandroid samples the first dozen lines. (A random
 sampling of lines throughout the poem would produce less reliable results: poets
@@ -313,7 +313,7 @@ How can it be wrong if the word is in its dictionary? The things it needs to kno
 words vary to some extent both geographically and historically. For example, Philip
 Larkin, an English poet, hears the word “serious” as having two syllables (“SER ious”),
 and some of his lines hardly scan at all if you give the word three syllables (“SE ri ous”),
-as the American Heritage Dictionary insists. W. B. Yeats (Irish, 1865-1939) consistently
+as the *American Heritage Dictionary* insists. W. B. Yeats (Irish, 1865-1939) consistently
 treats “being” as a monosyllable (“And Agamemnon dead. Being so caught up”), while
 Edward Fitzgerald (English, 1809-1883) has lines that require “being” to have two
 syllables in order to scan with the kind and degree of regularity typical of his other lines
@@ -338,15 +338,15 @@ letter; this won’t affect how the word appears in the line.
 
 ![fig6.1](fig6.1.png)
 
-3. When you click OK in the dialog, the scansion field clears; the Scandroid is
+3. When you click ``OK`` in the dialog, the scansion field clears; the Scandroid is
 ready to start the process over again, taking the dictionary-edited word into
-consideration. Start pressing the Step button again to see how the results
+consideration. Start pressing the ``Step`` button again to see how the results
 change.
 
 The syllabification that appears at the top of the dialog may come from the dictionary
 or, if the dictionary has no entry for that word, from the program’s internal
 syllabification and stressing routines. In this case, when you enter a new treatment for
-the word and press OK, a new entry in the dictionary is created. It lasts, however, only
+the word and press ``OK``, a new entry in the dictionary is created. It lasts, however, only
 for the duration of the current session; the Scandroid’s default, startup dictionary isn’t
 altered.
 
@@ -451,7 +451,7 @@ Stress-ambiguous polysyllables are entered in the dictionary all in lowercase:
 convict         con vict
 ```
 In this case the stress pattern is ambiguous because either syllable might be stressed,
-depending on whether the word is a noun (CON vict) or a verb (con VICT).
+depending on whether the word is a noun (``CON vict``) or a verb (``con VICT``).
 
 You can add these markings for stress-ambiguity to a word’s entry in the dictionary by
 selecting the word so as to bring up the dictionary-editing dialog. Sometimes the results
@@ -459,7 +459,7 @@ are unexpected, but there’s no harm in experimenting. If you don’t like what
 you can select the word again and edit it back to the way it was. (Even if you’ve
 forgotten how it was, all is not lost. When you quit the program, your dictionary edits
 are abandoned; when you restart it, it will be with the original dictionary. Or simply
-press the Reload dict button.)
+press the ``Reload dict`` button.)
 
 You can also remove markers for ambiguity when they appear in the top field of the
 dictionary-editing dialog. If you change don’t* to don’t then “don’t” will never be
@@ -467,8 +467,8 @@ treated as emphatic, but always as a simple auxiliary.
 
 If a word has two unmistakable lexical stresses in it (which generally happens only with
 compounds that are typographically run together as a single word), you can enter more
-than one ALL CAPS stressed syllable, and the program will recognize them. HEAD line
-is probably not a good example, but MAN KIND might be.
+than one ALL CAPS stressed syllable, and the program will recognize them. ``HEAD`` line
+is probably not a good example, but ``MAN KIND`` might be.
 
 The way the Scandroid uses these stress-ambiguity markings is described in more detail
 in the next section.
@@ -497,7 +497,7 @@ one. Research is under way to see if this approach has any promise.
 
 You might find that you edit the dictionary while working on one poem, and then when
 you load a different poem, discover that the edits are idiosyncratic to the previous poem
-and get in the way with the new one. That’s why there’s now a Reload Dict button: it
+and get in the way with the new one. That’s why there’s now a ``Reload Dict`` button: it
 throws out all your edits and loads the default dictionary as if you had restarted the
 program.
 
