@@ -30,8 +30,8 @@ innumerable limitations. Here’s an important one:
 contains only English words and, more subtly, only the kinds of information
 relevant to English verse. The metrical rules and principles, too, are those of English.
 French, Chinese, German or Greek would require not just a different dictionary but
-a different program. (For one explanation, see Hanson and Kiparsky, “A Parametric
-Theory of Poetic Meter,” *Language*, 1996, 72, 2, 287-335.)
+a different program. (For one explanation, see Hanson and Kiparsky, “[A Parametric
+Theory of Poetic Meter](doc/reference/A_Parametric_Theory_of_Poetic_Meter.pdf),” *Language*, 1996, 72, 2, 287-335.)
 
 The Scandroid is freely distributable under the terms of the GNU Public License. You
 can give it away, use it in class, make it do your poetry homework for you, anything
