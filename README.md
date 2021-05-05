@@ -6,8 +6,7 @@ Version 1.1 was written in python 2. I have updated the code for python 3.
 My ultimate goal is to use this for song lyric writing.
 
 ## User's Manual
-The manual for version 1.1 (pdf) is also copied from Hartman's page to ``doc`` folder. Moving forward,
-I will turn the manual into markdown format (work in progress) and be covered under GPL3 so that it can be maintained.  
+The manual for [version 1.1](doc/reference/Scandroid_Manual_1-1.pdf) (pdf) is copied from Hartman's page to ``doc`` folder. I have turned the [manual into markdown format](doc/manual.md) and be covered under GPL3 so that it can be maintained.  
 
 ## Metrical Foot
 It is an unit consists of a pattern of stressed and unstress syllables.
