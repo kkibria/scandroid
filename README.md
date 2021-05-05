@@ -8,8 +8,8 @@ My ultimate goal is to use this for song lyric writing.
 ## User's Manual
 The manual for [version 1.1](doc/reference/Scandroid_Manual_1-1.pdf) (pdf) from 2015 is copied from Hartman's page to the ``doc/reference`` folder. I have ported the manual to markdown format, so that it will be covered under GPL3 and can be maintained moving forward for future versions. The ported [manual](doc/manual.md) (markdown) is located in the ``doc`` folder. 
 
-## Metrical Foot
-It is an unit consists of a pattern of stressed and unstress syllables.
+## What is Metrical Foot?
+It is an unit consists of a pattern of stressed and unstressed syllables.
 
 *Iambic*: Pronounced duh-DUH. Consists of two syllables- an unstressed syllable followed by a 
 stressed syllable. An iamb can be made up of one word with two syllables or two different words.
