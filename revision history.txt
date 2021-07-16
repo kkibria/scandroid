@@ -10,6 +10,10 @@ Yet to Be Done:
 -- make line numbers smart (exclude blanks, titles)
 -- handle digits in verse ("12" -> "twelve")
 
+1.2 -
+-- code ported to python 3.7.3
+-- cleaned up to support pyinstaller 4.4
+
 1.1 -
 -- major change in architecture: when a file is loaded, to deduce the metrical
 	parameters the program now tries out all stress resolutions on the sample

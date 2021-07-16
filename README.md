@@ -74,13 +74,26 @@ First install PyInstaller.
 pip install pyinstaller
 ```
 Now you should be able to build the executable from cloned scandroid directory.
+
+### build with one file option
+This option is useful for easy distribution. Run PyInstaller with `-F` option,
+
 ```
-pyinstaller --add-data "./source/scandictionary.txt;." .\source\Scandroid.py
+pyinstaller -F --add-data "./source/scandictionary.txt;." "./source/Scandroid.py"
 ```
-This will generate the executable bundle in a subdirectory called `dist`. You can zip
+This will generate a single executable file in a subdirectory called `dist`. You simply distribute
+this executable.
+
+### build with one folder option
+This option is useful for debugging a bundle. Run PyInstaller with `-D` option,
+
+```
+pyinstaller -D --add-data "./source/scandictionary.txt;." "./source/Scandroid.py"
+```
+This will generate the executable bundle folder in a subdirectory called `dist`. You can zip
 the bundle folder inside `dist` and distribute.
 
-There are other advanced options available such as single file exectable for building. 
+There are other advanced options available for building. 
 For more details, see the [pyinstaller manual](https://pyinstaller.readthedocs.io/).
 
 > PyInstaller is not a cross platform builder. That means if you want to build a Mac

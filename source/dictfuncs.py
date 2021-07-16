@@ -17,13 +17,7 @@ import os
 
 TEXTDICT = "scandictionary.txt"
 
-# added code by Thomas Heller to find "home" directory (where dictionary
-# should be found), whether running from script or frozen
 import imp, sys
-
-def main_is_frozen():
-    return (hasattr(sys, "frozen") or hasattr(sys, "importers") or
-            imp.is_frozen("__main__"))
 
 class ScanDict:
 
@@ -42,15 +36,8 @@ class ScanDict:
         the application bundle.
         """
         if not self.dictopen:
-            if sys.platform == 'darwin':
-                defdir = os.getcwd()
-                self.dictopen = TEXTDICT
-            elif sys.platform == 'win32':
-                if main_is_frozen(): defdir = os.path.dirname(sys.executable)
-                else: defdir = os.path.dirname(sys.argv[0])
-                self.dictopen = os.path.join(defdir, TEXTDICT)
-            else:
-                sys.exit("Only Mac and Win supported! Sorry!")
+            self.dictopen = os.path.abspath(os.path.join(os.path.dirname(__file__), TEXTDICT))
+
         try:
             f = open(self.dictopen, 'r')
         except IOError:			# dict file has gone astray

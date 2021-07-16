@@ -17,17 +17,21 @@ abouttxt = \
 """
     ~      ~      ~      ~      ~      ~      ~      ~      ~
 
-scansion of English metrical verse for Mac and Windows
+scansion of English metrical verse
 
     ~      ~      ~      ~      ~      ~      ~      ~      ~
 
-version 1.1, Copyright (C) 2005 Charles Hartman
+version 1.2
+Copyright (C) 2005 Charles Hartman
+Copyright (C) 2021 Khan Kibria
 
 the Scandroid comes with ABSOLUTELY NO WARRANTY;
 for details, see the GNU Public License in the file "gpl.txt"
 that accompanies the program. This software is OSI Certified 
 Open Source Software. OSI Certified is a certification mark 
 of the Open Source Initiative.
+
+Source code: https://github.com/kkibria/scandroid
 """
 
 InitialText = \
