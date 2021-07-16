@@ -83,3 +83,5 @@ the bundle folder inside `dist` and distribute.
 There are other advanced options available such as single file exectable for building. 
 For more details, see the [pyinstaller manual](https://pyinstaller.readthedocs.io/).
 
+> PyInstaller is not a cross platform builder. That means if you want to build a Mac
+> executable, you have to build the executable in a Mac. 
