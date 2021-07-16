@@ -53,3 +53,33 @@ File ``.vscode/settings.json``
 > You can also interactively select python version in VS code status bar.
 
 
+## Running Scandroid
+Of course you have to have Python 3 installed. I have tested with Python 3.7.3.
+You also need `wx` installed for the user interface.
+
+```
+pip install -U wxPython
+```
+Now you should be able to run the source directly using python interpreter from cloned scandroid directory.
+```
+py ./source/Scandroid.py
+```
+
+## Building executable
+Building executable can be a preferred option since excutable won't need a machine with python installed.
+You can distribute just the exceutable bundle. The bundle will have everything it needs to run.
+If you can run scandroid successfully, you can use `pyinstaller` to build executable for your o/s.
+First install PyInstaller.
+```
+pip install pyinstaller
+```
+Now you should be able to build the executable from cloned scandroid directory.
+```
+pyinstaller --add-data "./source/scandictionary.txt;." .\source\Scandroid.py
+```
+This will generate the executable bundle in a subdirectory called `dist`. You can zip
+the bundle folder inside `dist` and distribute.
+
+There are other advanced options available such as single file exectable for building. 
+For more details, see the [pyinstaller manual](https://pyinstaller.readthedocs.io/).
+
