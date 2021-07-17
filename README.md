@@ -52,8 +52,10 @@ File ``.vscode/settings.json``
 
 > You can also interactively select python version in VS code status bar.
 
+Following are the instruction for running scandroid from source and buuilding executable binary
+in windows. 
 
-## Running Scandroid
+## Running Scandroid in windows
 Of course you have to have Python 3 installed. I have tested with Python 3.7.3.
 You also need `wx` installed for the user interface.
 
@@ -65,7 +67,7 @@ Now you should be able to run the source directly using python interpreter from 
 py ./source/Scandroid.py
 ```
 
-## Building executable
+## Building executable in windows
 Building executable can be a preferred option since excutable won't need a machine with python installed.
 You can distribute just the exceutable bundle. The bundle will have everything it needs to run.
 If you can run scandroid successfully, you can use `pyinstaller` to build executable for your o/s.
@@ -99,3 +101,9 @@ For more details, see the [pyinstaller manual](https://pyinstaller.readthedocs.i
 > PyInstaller is not a cross platform builder. That means if you want to build a Mac
 > executable, you have to build the executable in a Mac. I have built and tested it only in an
 > windows 10 machine.
+
+## macos and ubuntu
+Building binary For all platforms consult `.github/workflows` folder.
+This floder contains commands for building binaries using github actions. I use github actions
+to build binaries for windows, macos and ubuntu each time I do a commit. You can download
+the recent prebuilt binaries (artifacts) from actions tab.

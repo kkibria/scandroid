@@ -6,6 +6,8 @@ name: Python macos application
 on:
   push:
     branches: [ main ]
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
   pull_request:
     branches: [ main ]
 
@@ -32,5 +34,5 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: scandroid-macos
+        name: scandroid-macos-${{ github.ref }}
         path: dist/
