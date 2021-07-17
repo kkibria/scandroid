@@ -22,6 +22,7 @@ jobs:
         python-version: 3.9
     - name: Install dependencies
       run: |
+        apt-get install build-essential libgtk-3-dev
         URL=https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04
         python -m pip install --upgrade pip
         pip install -U -f $URL wxPython
