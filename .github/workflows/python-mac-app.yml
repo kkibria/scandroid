@@ -28,7 +28,7 @@ jobs:
 
     - name: build executable
       run: |
-        pyinstaller -F --add-data "./source/scandictionary.txt;." "./source/Scandroid.py"
+        pyinstaller -F --add-data "./source/scandictionary.txt:." "./source/Scandroid.py"
 
     - uses: actions/upload-artifact@v2
       with:
