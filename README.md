@@ -102,8 +102,8 @@ For more details, see the [pyinstaller manual](https://pyinstaller.readthedocs.i
 > executable, you have to build the executable in a Mac. I have built and tested it only in an
 > windows 10 machine.
 
-## macos and ubuntu
+## MacOs and ubuntu
 Building binary For all platforms consult `.github/workflows` folder.
 This floder contains commands for building binaries using github actions. I use github actions
-to build binaries for windows, macos and ubuntu each time I do a commit. You can download
+to build binaries for windows, MacOs and ubuntu each time I do a commit. You can download
 the recent prebuilt binaries (artifacts) from actions tab.
