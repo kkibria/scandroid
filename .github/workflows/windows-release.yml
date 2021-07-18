@@ -42,6 +42,7 @@ jobs:
     - name: list
       run: |
         tree
+        ls ././artifact
 
     - name: Create Release
       id: create_release
