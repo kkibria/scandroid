@@ -39,6 +39,7 @@ jobs:
         name: scandroid-windows
         path: artifact
 
+    - name: list
       run: |
         tree
 
