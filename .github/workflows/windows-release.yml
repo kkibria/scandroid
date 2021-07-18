@@ -29,20 +29,15 @@ jobs:
       run: |
         pyinstaller -F --add-data "./source/scandictionary.txt;." "./source/Scandroid.py"
 
-    - uses: actions/upload-artifact@v2
+    - uses: papeloto/action-zip@v1
       with:
-        name: scandroid-windows
-        path: dist/
-
-    - uses: actions/download-artifact@v2
-      with:
-        name: scandroid-windows
-        path: ./artifact
+        files: dist/
+        dest: scandroid-windows.zip
 
     - name: list
       run: |
         tree
-        ls ././artifact
+        ls .
 
     - name: Create Release
       id: create_release
