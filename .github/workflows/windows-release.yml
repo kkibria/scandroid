@@ -37,7 +37,7 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: scandroid-windows
-        path: artifact
+        path: ./artifact
 
     - name: list
       run: |
