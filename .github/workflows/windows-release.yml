@@ -32,7 +32,7 @@ jobs:
     - uses: papeloto/action-zip@v1
       with:
         files: dist/
-        dest: scandroid-windows.zip
+        dest: scandroid-windows-exe.zip
 
     - name: list
       run: |
