@@ -62,16 +62,38 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
     - name: get windows artifact
       uses: actions/download-artifact@v2
       with:
         name: scandroid-windows
         path: windows/
 
-    - name: list
-      run: |
-        tree
-        ls
+    - uses: papeloto/action-zip@v1
+      with:
+        files: windows/
+        dest: scandroid-windows-exe.zip
+
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ./scandroid-windows-exe.zip
+        asset_name: windows-exe.zip
+        asset_content_type: application/zip
 
     - name: get macos artifact
       uses: actions/download-artifact@v2
@@ -79,7 +101,19 @@ jobs:
         name: scandroid-macos
         path: macos/
 
-    - name: list
-      run: |
-        tree
-        ls
+    - uses: papeloto/action-zip@v1
+      with:
+        files: macos/
+        dest: scandroid-macos-exe.zip
+
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ./scandroid-macos-exe.zip
+        asset_name: macos-exe.zip
+        asset_content_type: application/zip
+
