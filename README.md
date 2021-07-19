@@ -53,16 +53,20 @@ File ``.vscode/settings.json``
 > You can also interactively select python version in VS code status bar.
 
 ## Pre-built binaries (Executable file) for releases
+Executable is the most straight forward option since you can run them directly without any additional steps
+or installing any additional components.
+
 Github provides windows, MacOs and ubuntu virtual machines for github actions.
 As such, we can pre-build windows, MacOs and ubuntu binaries only using PyInstaller right at github.
 The virtual machines are created right before the run 
 and after the run is finished the virtual machines are disposed and as such this comes with a high
 probability of being free of malicious influences should be trust worthy. However bugs are always possible.
 
-If you can't build the binaries yourself then you can download the pre-built binaries for
+If you don't need to build the binaries yourself then you can download
+the pre-built executable binaries for
 windows, MacOs and ubuntu for any binary release from our [github release page](../../releases).
 
-## Running Scandroid using Python
+## Running Scandroid from source code using Python
 Of course you have to have Python 3 installed. I have tested with Python 3.7.3.
 Following are the instructions for running scandroid directly from source code with python. 
 You will also need `wxPython` installed for the user interface.
@@ -83,9 +87,11 @@ py ./source/Scandroid.py
 ```
 
 ## Building executable
-Executable can be a preferred option since executable won't need a machine with python installed.
-You can distribute just the executable bundle. The bundle will have everything it needs to run.
-If you can run scandroid successfully, you can use `pyinstaller` to build executable for your o/s.
+If you can run scandroid from source using python successfully on a machine then you can use
+`pyinstaller` to build executable for the same o/s in the same machine.
+Executable can be a preferred option since running executable won't need a machine with python
+installed. You can distribute just the executable bundle. The bundle will have everything it
+needs to run.
 
 ### Windows O/S
 
