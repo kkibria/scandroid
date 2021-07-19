@@ -104,6 +104,6 @@ For more details, see the [pyinstaller manual](https://pyinstaller.readthedocs.i
 
 ## MacOs and ubuntu
 Building binary For all platforms consult `.github/workflows` folder.
-This floder contains commands for building binaries using github actions. I use github actions
-to build binaries for windows, MacOs and ubuntu each time I do a commit. You can download
-the recent prebuilt binaries (artifacts) from actions tab.
+This floder contains commands for building binaries using github actions. We use github actions
+to build binaries for windows, MacOs and ubuntu each time we do a commit and release. You can download
+the prebuilt binaries from [Releases](../../releases).
