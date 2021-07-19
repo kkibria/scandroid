@@ -52,8 +52,8 @@ File ``.vscode/settings.json``
 
 > You can also interactively select python version in VS code status bar.
 
-## Windows
-Following are the instruction for running scandroid from source and building executable binary
+## Windows O/S
+Following are the instructions for running scandroid from source and building executable binary
 in windows. 
 
 ### Running Scandroid in windows
