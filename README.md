@@ -53,8 +53,7 @@ File ``.vscode/settings.json``
 > You can also interactively select python version in VS code status bar.
 
 ## Pre-built binaries (Executable file) for releases
-Executable is the most straight forward option since you can run them directly without any additional steps
-or installing any additional components.
+Executable is the most straight forward option since they have batteries included. You can run them directly without any additional steps or installing any additional components.
 
 Github provides windows, MacOs and ubuntu virtual machines for github actions.
 As such, we can pre-build windows, MacOs and ubuntu binaries only using PyInstaller right at github.
