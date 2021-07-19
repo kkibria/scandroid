@@ -104,11 +104,11 @@ For more details, see the [pyinstaller manual](https://pyinstaller.readthedocs.i
 > windows 10 machine.
 
 ### MacOs and ubuntu
-Building binary For all platforms consult `.github/workflows` folder.
+Building binary for a platform consult `.github/workflows` folder.
 This floder contains commands for building binaries using github actions. We use github actions
 to build binaries for windows, MacOs and ubuntu each time we do a commit and release.
 
 
 ## Pre-built binaries (Executable file) for releases
 You can download
-the prebuilt binaries for windows, MacOs and ubuntu for a release from [Releases](../../releases).
+the prebuilt binaries for windows, MacOs and ubuntu for a version release from [Releases](../../releases).
