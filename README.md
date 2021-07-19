@@ -56,7 +56,7 @@ File ``.vscode/settings.json``
 Executable is the most straight forward option since they have batteries included. You can run them directly without any additional steps or installing any additional components.
 
 > Github provides windows, MacOs and ubuntu virtual machines for github actions.
-> As such, we can pre-build only windows, MacOs and ubuntu binaries using PyInstaller right at github.
+> As such, we can only pre-build windows, MacOs and ubuntu binaries using PyInstaller right at github.
 > The virtual machines are created fresh right before the run 
 > and after the run is finished the virtual machines are disposed and as such this comes with a high
 > probability of being free of malicious influences should be trust worthy. However bugs are always possible.
