@@ -58,9 +58,10 @@ jobs:
         path: dist/
 
   create-release:
-    runs-on: windows-latest
     needs: [build-windows, build-macos]
+    runs-on: windows-latest
 
+    steps:
     - name: get windows artifact
         uses: actions/download-artifact@v2
         with:
