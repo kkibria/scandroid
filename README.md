@@ -55,7 +55,8 @@ File ``.vscode/settings.json``
 Following are the instruction for running scandroid from source and buuilding executable binary
 in windows. 
 
-## Running Scandroid in windows
+## Windows
+### Running Scandroid in windows
 Of course you have to have Python 3 installed. I have tested with Python 3.7.3.
 You also need `wx` installed for the user interface.
 
@@ -67,7 +68,7 @@ Now you should be able to run the source directly using python interpreter from 
 py ./source/Scandroid.py
 ```
 
-## Building executable in windows
+### Building executable in windows
 Building executable can be a preferred option since excutable won't need a machine with python installed.
 You can distribute just the exceutable bundle. The bundle will have everything it needs to run.
 If you can run scandroid successfully, you can use `pyinstaller` to build executable for your o/s.
@@ -77,7 +78,7 @@ pip install pyinstaller
 ```
 Now you should be able to build the executable from cloned scandroid directory.
 
-### build with one file option
+#### build with one file option
 This option is useful for easy distribution. Run PyInstaller with `-F` option,
 
 ```
@@ -86,7 +87,7 @@ pyinstaller -F --add-data "./source/scandictionary.txt;." "./source/Scandroid.py
 This will generate a single executable file in a subdirectory called `dist`. You simply distribute
 this executable.
 
-### build with one folder option
+#### build with one folder option
 This option is useful for debugging a bundle. Run PyInstaller with `-D` option,
 
 ```
@@ -102,8 +103,12 @@ For more details, see the [pyinstaller manual](https://pyinstaller.readthedocs.i
 > executable, you have to build the executable in a Mac. I have built and tested it only in an
 > windows 10 machine.
 
-## MacOs and ubuntu
+### MacOs and ubuntu
 Building binary For all platforms consult `.github/workflows` folder.
 This floder contains commands for building binaries using github actions. We use github actions
-to build binaries for windows, MacOs and ubuntu each time we do a commit and release. You can download
-the prebuilt binaries from [Releases](../../releases).
+to build binaries for windows, MacOs and ubuntu each time we do a commit and release.
+
+
+## Pre-built binaries (Executable file) for releases
+You can download
+the prebuilt binaries for windows, MacOs and ubuntu for a release from [Releases](../../releases).
