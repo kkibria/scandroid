@@ -66,6 +66,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: scandroid-windows
+        path: windows/
 
     - name: list
       run: |
@@ -76,7 +77,8 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: scandroid-macos
-  
+        path: macos/
+
     - name: list
       run: |
         tree
