@@ -97,7 +97,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         draft: false
-        prerelease: true
+        prerelease: false
 
     - name: get windows artifact
       uses: actions/download-artifact@v2
