@@ -105,7 +105,7 @@ For more details, see the [pyinstaller manual](https://pyinstaller.readthedocs.i
 
 ### MacOs and ubuntu
 Building binary for a platform consult `.github/workflows` folder.
-This floder contains commands for building binaries using github actions. We use github actions
+This folder contains commands for building binaries using github actions. We use github actions
 to build binaries for windows, MacOs and ubuntu each time we do a commit and release.
 
 
