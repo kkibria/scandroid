@@ -69,8 +69,8 @@ jobs:
 
     - name: list
       run: |
-      tree
-      ls dist
+        tree
+        ls dist
 
     - name: get macos artifact
       uses: actions/download-artifact@v2
@@ -79,5 +79,5 @@ jobs:
   
     - name: list
       run: |
-      tree
-      ls dist
+        tree
+        ls dist
