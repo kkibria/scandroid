@@ -90,7 +90,8 @@ py ./source/Scandroid.py
 If you can run scandroid from source using python successfully on a machine then you can use
 `pyinstaller` to build executable for the same o/s in the same machine.
 Executable can be a preferred option since running executable won't need a machine with python
-installed. You can distribute just the executable bundle. The bundle will have everything it
+and wxPython
+installed. You can just distribute the executable bundle. The bundle will have everything it
 needs to run.
 
 ### Windows O/S
