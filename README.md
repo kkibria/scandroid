@@ -77,8 +77,8 @@ You will also need `wxPython` installed for the user interface.
 pip install -U wxPython
 ```
 ### MacOs, linux and other O/S
-To install wxPython consult `.github/workflows` folder.
-This folder contains commands for setting up wxPython using github actions
+To install `wxPython` consult `.github/workflows` folder.
+This folder contains commands for setting up `wxPython` using github actions
 for windows, MacOs and ubuntu.
 
 Now you should be able to run the source directly using python interpreter from cloned scandroid directory.
