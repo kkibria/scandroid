@@ -10,7 +10,6 @@ on:
 
 jobs:
   build-windows:
-    needs: create-release
     runs-on: windows-latest
 
     steps:
@@ -35,7 +34,6 @@ jobs:
         path: dist/
 
   build-macos:
-    needs: create-release
     runs-on: macos-latest
 
     steps:
