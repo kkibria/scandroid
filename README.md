@@ -58,8 +58,9 @@ Executable is the most straight forward option since they have batteries include
 > Github provides windows, MacOs and ubuntu virtual machines for github actions.
 > As such, we can only pre-build windows, MacOs and ubuntu binaries using PyInstaller right at github.
 > The virtual machines are created fresh right before the run 
-> and after the run is finished the virtual machines are disposed and as such this comes with a high
-> probability of being free of malicious influences should be trust worthy. However bugs are always possible.
+> and after the run is finished the virtual machines are disposed. As such this comes with a high
+> probability of being free of malicious influences and should be trust worthy.
+> However bugs are always possible.
 
 If you don't need to build the binaries yourself then you can download
 the pre-built executable binaries for
