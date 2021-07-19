@@ -63,9 +63,9 @@ jobs:
 
     steps:
     - name: get windows artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: scandroid-windows
+      uses: actions/download-artifact@v2
+      with:
+        name: scandroid-windows
 
     - name: list
       run: |
@@ -73,9 +73,9 @@ jobs:
       ls dist
 
     - name: get macos artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: scandroid-macos
+      uses: actions/download-artifact@v2
+      with:
+        name: scandroid-macos
   
     - name: list
       run: |
