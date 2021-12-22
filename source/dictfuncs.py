@@ -17,7 +17,7 @@ import os
 
 TEXTDICT = "scandictionary.txt"
 
-import imp, sys
+import sys
 
 class ScanDict:
 

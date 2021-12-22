@@ -23,7 +23,6 @@
 # sooner or later these lines should be deleted.
 
 import re
-import copy
 from scanstrings import *
 from scanutilities import *
 
